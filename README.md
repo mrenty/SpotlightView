@@ -1,6 +1,8 @@
 # SpotlightView
 
-[![Platforms](https://img.shields.io/badge/Platforms-macOS_iOS-green?style=flat-square)](https://img.shields.io/badge/Platforms-macOS_iOS-green?style=flat-square)
+[![iOS](https://img.shields.io/badge/iOS-15.0-orange?style=flat-square)](https://img.shields.io/badge/iOS-15.0-orange?style=flat-square)
+[![macOS](https://img.shields.io/badge/macOS-12.0-orange?style=flat-square)](https://img.shields.io/badge/macOS-12.0-orange?style=flat-square)
+[![Platforms](https://img.shields.io/badge/Platforms-macOS_iOS-green?style=flat-square)](https://img.shields.io/badge/Platforms-macOS_iOS-yellowgreen?style=flat-square)
 [![Swift Package Manager](https://img.shields.io/badge/Swift_Package_Manager-compatible-orange?style=flat-square)](https://img.shields.io/badge/Swift_Package_Manager-compatible-orange?style=flat-square)
 
 This package provides a `View` extension to create an animated intro/walkthrough for your app.

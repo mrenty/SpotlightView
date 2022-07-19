@@ -1,12 +1,12 @@
 import SwiftUI
 
-enum SpotlightShape {
+public enum SpotlightShape {
     case circle
     case rectangle
     case rounded
 }
 
-@available(iOS 14, macOS 12.0, *)
+@available(iOS 15, macOS 12.0, *)
 struct BoundsKeyProperties {
     var shape: SpotlightShape
     var anchor: Anchor<CGRect>
@@ -14,7 +14,7 @@ struct BoundsKeyProperties {
     var radius: CGFloat = 0
 }
 
-@available(iOS 14, macOS 12.0, *)
+@available(iOS 15, macOS 12.0, *)
 struct BoundsKey: PreferenceKey {
     static var defaultValue: [Int: BoundsKeyProperties] = [:]
     
@@ -23,17 +23,17 @@ struct BoundsKey: PreferenceKey {
     }
 }
 
-@available(iOS 14, macOS 12.0, *)
+@available(iOS 15, macOS 12.0, *)
 extension View {
     @ViewBuilder
-    func addSpotlight(_ id: Int, shape: SpotlightShape = .rectangle, roundedRadius: CGFloat = 0, text: String = "") -> some View {
+    public func addSpotlight(_ id: Int, shape: SpotlightShape = .rectangle, roundedRadius: CGFloat = 0, text: String = "") -> some View {
         self
             .anchorPreference(key: BoundsKey.self, value: .bounds) {
                 [id: BoundsKeyProperties(shape: shape, anchor: $0, text: text, radius: roundedRadius)]
             }
     }
     
-    func addSpotlightOverlay(show: Binding<Bool>, currentSpot: Binding<Int>) -> some View {
+    public func addSpotlightOverlay(show: Binding<Bool>, currentSpot: Binding<Int>) -> some View {
         self.overlayPreferenceValue(BoundsKey.self) { values in
             GeometryReader { proxy in
                 if let preference = values.first(where: { item in
